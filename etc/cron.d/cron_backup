@@ -1,0 +1,6 @@
+# Create backups every week
+
+SHELL=/bin/sh
+
+# At 00:00 on Friday
+0 0 * * 5 root /usr/bin/tar -cvzf "/var/backups/home/$(date +%d_%m_%Y)_backup.tar.gz" /home
